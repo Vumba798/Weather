@@ -3,12 +3,12 @@ package com.example.weather.viewmodels
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.weather.retrofit.WeatherClient
-import com.example.weather.model.WeatherModel
+import com.example.weather.model.api.response.OneCallResponse
+import com.example.weather.model.api.WeatherClient
 import kotlinx.coroutines.launch
 
 class MainViewModel: ViewModel() {
-    val myResponse = MutableLiveData<WeatherModel>()
+    val myResponse = MutableLiveData<OneCallResponse>()
 
     fun getCurrentWeather() {
         viewModelScope.launch {
