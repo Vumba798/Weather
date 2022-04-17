@@ -3,8 +3,8 @@ package com.example.weather.viewmodels
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.weather.model.api.response.OneCallResponse
-import com.example.weather.model.api.WeatherClient
+import com.example.weather.model.remote.apiresponse.OneCallResponse
+import com.example.weather.model.remote.WeatherClient
 import kotlinx.coroutines.launch
 
 class MainViewModel: ViewModel() {

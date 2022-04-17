@@ -1,4 +1,4 @@
-package com.example.weather.model.api.response
+package com.example.weather.model.remote.apiresponse
 
 import com.example.example.Current
 import com.example.example.Daily
@@ -9,11 +9,11 @@ import com.google.gson.annotations.SerializedName
 
 data class OneCallResponse (
 
-  @SerializedName("lat"             ) var lat            : Double?             = null,
-  @SerializedName("lon"             ) var lon            : Double?             = null,
-  @SerializedName("timezone"        ) var timezone       : String?             = null,
-  @SerializedName("timezone_offset" ) var timezoneOffset : Int?                = null,
-  @SerializedName("current"         ) var current        : Current?            = Current(),
+  @SerializedName("lat"             ) var lat            : Float             ,
+  @SerializedName("lon"             ) var lon            : Float             ,
+  @SerializedName("timezone"        ) var timezone       : String             ,
+  @SerializedName("timezone_offset" ) var timezoneOffset : Int                ,
+  @SerializedName("current"         ) var current        : Current            ,
   @SerializedName("minutely"        ) var minutely       : ArrayList<Minutely> = arrayListOf(),
   @SerializedName("hourly"          ) var hourly         : ArrayList<Hourly>   = arrayListOf(),
   @SerializedName("daily"           ) var daily          : ArrayList<Daily>    = arrayListOf()
