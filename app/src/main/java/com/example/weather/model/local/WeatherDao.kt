@@ -17,37 +17,37 @@ data class Coordinates(
 @Dao
 interface LocationDao {
     @Insert(onConflict = REPLACE)
-    fun insertLocations(vararg location: Location)
+    suspend fun insertLocations(vararg location: Location)
 
     @Query("SELECT lat, lon FROM location")
-    fun getCoordinates(): List<Coordinates>
+    suspend fun getCoordinates(): List<Coordinates>
 
     @Query("SELECT * FROM location")
-    fun getAllLocations(): List<Location>
+    suspend fun getAllLocations(): List<Location>
 }
 @Dao
 interface MinuteDao {
     @Insert(onConflict = REPLACE)
-    fun insert(vararg minute: Minute)
+    suspend fun insert(vararg minute: Minute)
 
     @Query("SELECT * FROM minute WHERE lat LIKE :lat AND lon LIKE :lon")
-    fun getMinutes(lat: Float, lon: Float): List<Minute>
+    suspend fun getMinutes(lat: Float, lon: Float): List<Minute>
 }
 
 @Dao
 interface HourDao {
     @Insert(onConflict = REPLACE)
-    fun insert(vararg hour: Hour)
+    suspend fun insert(vararg hour: Hour)
 
     @Query("SELECT * FROM hour WHERE lat LIKE :lat AND lon LIKE :lon")
-    fun getMinutes(lat: Float, lon: Float): List<Hour>
+    suspend fun getMinutes(lat: Float, lon: Float): List<Hour>
 }
 
 @Dao()
 interface DayDao {
     @Insert(onConflict = REPLACE)
-    fun insert(vararg day: Day)
+    suspend fun insert(vararg day: Day)
 
     @Query("SELECT * FROM day WHERE lat LIKE :lat AND lon LIKE :lon")
-    fun getMinutes(lat: Float, lon: Float): List<Day>
+    suspend fun getMinutes(lat: Float, lon: Float): List<Day>
 }
