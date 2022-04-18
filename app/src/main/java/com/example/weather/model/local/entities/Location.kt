@@ -8,9 +8,13 @@ data class Location (
     var lat: Float,
     var lon: Float,
     var timezone: String,
-    var timezoneOffset: Int
+    var timezone_offset: Int
 )
 
 fun OneCallResponse.toLocation(): Location {
-    return Location(lat, lon, timezone, timezoneOffset)
+    return Location(
+        lat = lat,
+        lon = lon,
+        timezone = timezone,
+        timezone_offset = timezoneOffset)
 }

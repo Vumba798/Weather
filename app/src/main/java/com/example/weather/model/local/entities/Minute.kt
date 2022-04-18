@@ -23,7 +23,12 @@ data class Minute (
 fun OneCallResponse.toMinutes() : List<Minute> {
     val minutes = mutableListOf<Minute>()
     for ((index, minute) in minutely.withIndex()) {
-        minutes.add(Minute(lat, lon, index, minute.dt, minute.precipitation))
+        minutes.add(Minute(
+            lat = lat,
+            lon = lon,
+            offset = index,
+            dt = minute.dt,
+            precipitation = minute.precipitation))
     }
     return minutes
 }
