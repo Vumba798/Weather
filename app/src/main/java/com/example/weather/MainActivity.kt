@@ -8,49 +8,53 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Scaffold
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.currentBackStackEntryAsState
+import androidx.navigation.compose.rememberNavController
+import com.example.weather.ui.components.WeatherTabRow
 import com.example.weather.ui.theme.WeatherTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
+//            WeatherApp()
             WeatherTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colors.background
-                ) {
-                    DefaultPreview()
-                }
             }
+
         }
+
     }
 }
 
-@Composable
-fun Greeting(name: String) {
-    Text(text = "Hello $name!")
-}
+
 
 @Preview(showBackground = true)
 @Composable
-fun DefaultPreview() {
+fun WeatherApp() {
     WeatherTheme {
-        Row() {
-            Image(
-                painter = painterResource(R.drawable.ic_launcher_background),
-                contentDescription = "Random picture"
-            )
-            Column {
-                Greeting("Android")
-                Greeting("Boba")
+        val navController = rememberNavController()
+        val backstackEntry = navController.currentBackStackEntryAsState()
+        val allScreens = WeatherScreen.values().toList()
+        val currentScreen = WeatherScreen.fromRoute(backstackEntry.value?.destination?.route)
+
+        Scaffold(
+            topBar = {
+                WeatherTabRow(
+                    allScreens = allScreens,
+                    onTabSelected = { TODO() },
+                    currentScreen = currentScreen
+                )
             }
+        ) {
+            Text("Hello")
         }
     }
 }
