@@ -4,6 +4,6 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 
 @Composable
-fun MapBody() {
-    Text("MapScreen")
+fun SettingsBody() {
+    Text("Settings screen")
 }
