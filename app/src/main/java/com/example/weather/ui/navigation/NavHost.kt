@@ -4,7 +4,7 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import com.example.weather.ui.screens.LocationsScreen
+import com.example.weather.ui.screens.locations.LocationsScreen
 import com.example.weather.ui.screens.SettingsScreen
 import com.example.weather.ui.screens.daily.DailyScreen
 import com.example.weather.ui.screens.details.DetailsScreen
