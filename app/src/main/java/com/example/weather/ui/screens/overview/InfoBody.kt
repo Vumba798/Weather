@@ -15,10 +15,14 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color.Companion.DarkGray
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavHostController
+import com.example.weather.ui.navigation.OverviewItem
 import com.example.weather.ui.theme.Blue
 
 @Composable
-fun InfoBody() {
+fun InfoBody(
+    navController: NavHostController
+) {
     Box(
         modifier = Modifier
             .padding(10.dp)
@@ -26,12 +30,14 @@ fun InfoBody() {
             .clip(RoundedCornerShape(10))
             .background(Blue)
     ) {
-        BasicInfo()
+        BasicInfo(navController)
     }
 }
 
 @Composable
-fun BasicInfo() {
+fun BasicInfo(
+    navController: NavHostController
+) {
     //TODO get values
     val feelsLike = 16
     val humidity = 40
@@ -60,8 +66,7 @@ fun BasicInfo() {
         OutlinedButton(
             colors = ButtonDefaults.buttonColors(backgroundColor = Blue),
             border = BorderStroke(width = 1.dp, color = DarkGray),
-            // TODO
-            onClick = { },
+            onClick = { navController.navigate(OverviewItem.Details.route) },
             modifier = Modifier
                 .clip(RoundedCornerShape(10)),
         ) {
