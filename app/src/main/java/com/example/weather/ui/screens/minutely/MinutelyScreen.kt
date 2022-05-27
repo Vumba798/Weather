@@ -32,55 +32,7 @@ fun MinutelyScreen() {
         modifier = Modifier
             .fillMaxSize()
     ) {
-        Row(
-            modifier = Modifier
-                .fillMaxWidth()
-                .background(color = DarkBlue)
-                .padding(10.dp)
-        ) {
-            Text(
-                text = "Time",
-                fontSize = 25.sp,
-                modifier = Modifier
-                    .padding(horizontal = 10.dp)
-            )
-            Text(
-                text = "Precipitation",
-                textAlign = TextAlign.End,
-                fontSize = 25.sp,
-                modifier = Modifier
-                    .fillMaxWidth()
-            )
-        }
-        LazyColumn {
-            items(data) { (time, prec) ->
-                Row(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                ) {
-                    Box(
-                        modifier = Modifier
-                            .padding(20.dp)
-                            .fillMaxWidth()
-                            .clip(RoundedCornerShape(20))
-                            .background(color = Blue)
-                            .padding(10.dp)
-                    ) {
-                        Text(
-                            text = time,
-                            fontSize = 20.sp
-                        )
-                        Text(
-                            text = prec.toString(),
-                            textAlign = TextAlign.End,
-                            fontSize = 20.sp,
-                            modifier = Modifier
-                                .padding(horizontal = 15.dp)
-                                .fillMaxWidth()
-                        )
-                    }
-                }
-            }
-        }
+        MinutelyTopBar()
+        MinutelyItemList(data = data)
     }
 }
