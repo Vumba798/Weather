@@ -1,4 +1,4 @@
-package com.example.weather.model.remote.apiresponse
+package com.example.weather.model.remote.apiResponse
 
 import com.example.example.Current
 import com.example.example.Daily

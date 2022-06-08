@@ -2,9 +2,7 @@ package com.example.weather.model.local.entities
 
 import androidx.room.Entity
 import androidx.room.ForeignKey
-import com.example.example.Minutely
-import com.example.weather.model.remote.apiresponse.OneCallResponse
-import java.util.stream.Collectors.toList
+import com.example.weather.model.remote.apiResponse.OneCallResponse
 
 @Entity(foreignKeys = [
     ForeignKey(entity = Location::class,

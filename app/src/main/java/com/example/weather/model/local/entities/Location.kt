@@ -1,7 +1,7 @@
 package com.example.weather.model.local.entities
 
 import androidx.room.*
-import com.example.weather.model.remote.apiresponse.OneCallResponse
+import com.example.weather.model.remote.apiResponse.OneCallResponse
 
 @Entity(primaryKeys = ["lat", "lon"])
 data class Location (

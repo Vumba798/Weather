@@ -2,7 +2,7 @@ package com.example.weather.model.local.entities
 
 import androidx.room.Entity
 import androidx.room.ForeignKey
-import com.example.weather.model.remote.apiresponse.OneCallResponse
+import com.example.weather.model.remote.apiResponse.OneCallResponse
 
 @Entity(foreignKeys = [
     ForeignKey(entity = Location::class,
