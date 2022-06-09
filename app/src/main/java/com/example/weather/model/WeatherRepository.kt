@@ -10,7 +10,9 @@ class WeatherRepository(
     private val hourDao: HourDao,
     private val dayDao: DayDao
     ) {
-    suspend fun refresh() {
-        TODO()
+    suspend fun refresh(lat: Double, lon: Double) {
+    }
+
+    private fun isInternetAvailable(): Boolean {
     }
 }
